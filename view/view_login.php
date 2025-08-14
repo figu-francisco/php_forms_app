@@ -13,13 +13,13 @@
             <div class="card-header">
                 <h4 class="card-title fw-bold">Welcome to Forms!</h4>
                 <P class="card-subtitle text-warning">
-                    This is a demo app. Feel free to explore, please use dummy data. 
+                    gThis is a demo app. Feel free to explore, please use dummy data. 
                     You can reset the database anytime using the button below.
                 </p>
             </div>
             
             <div class="card-body my-3 w-100">
-                <h2>Sign in</h2>
+                <h2>Sign gtin</h2>
                 <hr>
                 <div>
                     <form class="w-100" action="main/login" method="post">
