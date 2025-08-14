@@ -76,7 +76,10 @@
             <div class="card-header" id="pocker_html_<?= $form->get_id() ?>">
                 <div class="d-flex justify-content-between">
                     <h5 class="card-title fw-bold"><?= $form->get_title() ?></h5>
-                    <div class="material-symbols-outlined ms-3"><?= $form->is_public() ? 'globe' : 'public_off' ?></div>
+                    <div class="material-symbols-outlined ms-3" 
+                         title='<?= $form->is_public() ? "This form is public" : "This form is private" ?>'>
+                            <?= $form->is_public() ? 'globe' : 'public_off' ?>
+                    </div>
                 </div>
                 <div>
                     <?php foreach (Color::cases() as $color): ?>

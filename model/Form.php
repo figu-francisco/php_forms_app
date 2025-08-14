@@ -476,17 +476,17 @@ class Form extends Model {
 }
 enum Color: string
 {
-    case Blue = 'blue';
-    case Red = 'red';
-    case Yellow = 'yellow';
-    case Green = 'green';
+    case Work = 'blue';
+    case Education = 'red';
+    case Sport = 'yellow';
+    case Personal = 'green';
     public function get_hex(): string
     {
         return match($this) {
-            Color::Blue => '#00BFFF', //DeepSkyBlue
-            Color::Red => '#e74c3c', //Crimson
-            Color::Yellow => '#FFD700', //Gold
-            Color::Green => '#27ae60', //Chartreuse
+            Color::Work => '#00BFFF', //DeepSkyBlue
+            Color::Education => '#e74c3c', //Crimson
+            Color::Sport => '#FFD700', //Gold
+            Color::Personal => '#27ae60', //Chartreuse
         };
     }
 

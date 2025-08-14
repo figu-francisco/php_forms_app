@@ -61,7 +61,7 @@
                 <?php foreach (Color::cases() as $color): ?> 
                     <div>
                         <input class="form-check-input" style="color"  <?=in_array($color, $form->get_color()) ? 'checked' : ''?>  type="checkbox" id="<?=$color->value?>" form="addEditForm" name="colors[]" value="<?=$color->value?>">
-                        <label for="<?=$color->value?>"   style="color:<?=$color->get_hex()?>;font-weight:bold;"><?=$color->value?></label>
+                        <label for="<?=$color->value?>"   style="color:<?=$color->get_hex()?>;font-weight:bold;"><?=$color->name?></label>
                     </div>
                 <?php endforeach; ?>
             </div>
