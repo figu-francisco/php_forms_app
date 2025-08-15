@@ -14,18 +14,18 @@
     <!-- exit left arrow -->
         <div class="container-fluid">
             <a href=<?= ($from_instances ? "instance/view_instances/".$form->get_id()."/" : "forms/index/").$encoded_search?>>
-                <span class="material-symbols-outlined" style="font-size: 32px;">arrow_back</span>
+                <span class="material-symbols-outlined" style="font-size: 32px;" title="Exit form">arrow_back</span>
             </a>
             <div class="d-flex ms-auto gap-3">
                 <!-- previous and next buttons -->
                 <?php if($idx > 1): ?>
                     <a href=<?= ($from_instances ? "instance/readonly_from_instances/" : "instance/readonly/").$instance->get_id()."/".($idx - 1)."/".$encoded_search ?> >
-                        <span class="material-symbols-outlined" style="font-size: 32px;">skip_previous</span>
+                        <span class="material-symbols-outlined" style="font-size: 32px;" title="Previous question">skip_previous</span>
                     </a>
                 <?php endif; ?>
                 <?php if($idx < count($form->get_questions())): ?>
                     <a href=<?= ($from_instances ? "instance/readonly_from_instances/" : "instance/readonly/").$instance->get_id()."/".($idx + 1)."/".$encoded_search ?> >
-                        <span class="material-symbols-outlined" style="font-size: 32px;">skip_next</span>
+                        <span class="material-symbols-outlined" style="font-size: 32px;" title="Next question">skip_next</span>
                     </a>
                 <?php endif;?>
             </div>

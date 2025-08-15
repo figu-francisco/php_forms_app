@@ -115,7 +115,7 @@
                 for (let question of questions) {
                     html +=
                         //bloc pour la modal
-                        "<div class='card mb-3' id=" + question.idx + ">" +
+                        "<div class='card mb-3' title='Drag & drop to move up/down' id=" + question.idx + ">" +
                             "<div class='modal fade' id='del_confirm_modal_" + question.id + "' tabindex='-1' aria-labelledby='modal_title"+question.id+"' aria-hidden='true'>" +
                             "<div class='modal-dialog'>" +
                             "<div class='modal-content'>" +
@@ -206,35 +206,35 @@
         <nav class="navbar bg-body-tertiary fixed-top mx-auto" style="max-width: 700px; ">
             <div class="container-fluid">
                 <a href="forms/index/<?= $encoded_search ?>" >
-                    <span class="material-symbols-outlined" style="font-size: 32px;">arrow_back</span>
+                    <span class="material-symbols-outlined" style="font-size: 32px;" title="Exit form">arrow_back</span>
                 </a>
                 <div class="d-flex ms-auto gap-3">
                     <!-- show add_question & edit only when not readonly -->
                     <?php if($form->has_complete_instances()): ?>
                         <a href="instance/view_instances/<?= $form->get_id() ?>/<?= $encoded_search ?>">
-                            <span class="material-symbols-outlined" style="font-size: 32px;">history</span>
+                            <span class="material-symbols-outlined" style="font-size: 32px;" title="See all previous submissions">history</span>
                         </a>
                     <?php endif; ?>
                     <?php if($form->is_readonly()):?>
                         <a href="instance/delete_all_instances/<?= $form->get_id() ?>/<?= $encoded_search ?>">
-                            <span class="material-symbols-outlined" style="font-size: 32px;">delete_history</span>
+                            <span class="material-symbols-outlined" style="font-size: 32px;" title="Delete all previous submissions">delete_history</span>
                         </a>
                     <?php endif; ?>
 
                     <?php if(!$form->is_readonly()):?>
                     <a href="question/add_question/<?= $form->get_id() ?>/<?= $encoded_search ?>">
-                        <span class="material-symbols-outlined" style="font-size: 32px;">playlist_add</span>
+                        <span class="material-symbols-outlined" style="font-size: 32px;" title="Add new question">playlist_add</span>
                     </a>
                     <a href="form/edit_form/<?= $form->get_id() ?>/<?= $encoded_search ?>">
-                        <span class="material-symbols-outlined" style="font-size: 32px;">edit</span>
+                        <span class="material-symbols-outlined" style="font-size: 32px;" title="Edit form information">edit</span>
                     </a>
                     <?php endif; ?>
                     <a href="form/remove_form_confirmation/<?= $form->get_id() ?>/<?= $encoded_search ?>">
-                        <span class="material-symbols-outlined" style="font-size: 32px;">delete</span>
+                        <span class="material-symbols-outlined" style="font-size: 32px;" title="Delete form">delete</span>
                     </a>
                     <?php if($form->has_complete_instances()): ?>
                     <a href="instance/analyze/<?= $form->get_id() ?>/<?= $encoded_search ?>">
-                        <span class="material-symbols-outlined" style="font-size: 32px;">query_stats</span>
+                        <span class="material-symbols-outlined" style="font-size: 32px;" title="See form stats">query_stats</span>
                     </a>
                     <?php endif; ?>
                 </div>   
@@ -252,11 +252,11 @@
                         <form action="form/toggle_public/<?= $encoded_search ?>" method="post">
                             <?php if($form->is_public() == 1):?>
                                 <button type="submit" class="btn btn-link p-0">
-                                    <span class="material-symbols-outlined" style="font-size: 32px;">globe</span>
+                                    <span class="material-symbols-outlined" style="font-size: 32px;" title="This form is public">globe</span>
                                 </button>
                             <?php else:?>
                                 <button type="submit" class="btn btn-link p-0">
-                                    <span class="material-symbols-outlined" style="font-size: 32px;">public_off</span>
+                                    <span class="material-symbols-outlined" style="font-size: 32px;" title="This form is private">public_off</span>
                                 </button>
                             <?php endif;?>
                             <input type="number" name="form_id" value=<?= $form->get_id() ?> hidden>

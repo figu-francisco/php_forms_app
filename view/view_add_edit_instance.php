@@ -15,34 +15,34 @@
                 <!-- arrow back -->
                 <button class="btn btn-link p-0" type="submit" form="answer_form" 
                         formaction="instance/<?=$user->is_guest() ? 'quit' : 'exit'?>/<?=$instance->get_id()?>/<?=$idx?>/<?=$encoded_search?>">
-                    <span class="material-symbols-outlined" style="font-size: 32px;" >arrow_back</span>
+                    <span class="material-symbols-outlined" style="font-size: 32px;" title="Exit form">arrow_back</span>
                 </button>
                 <div class="d-flex ms-auto gap-3">
                     <!-- cancel button -->
                     <?php if(!$user->is_guest()): ?>
                         <button class="btn btn-link p-0" type="submit" form="answer_form" 
                                 formaction="instance/quit/<?=$instance->get_id()?>/<?=$idx?>/<?=$encoded_search?>">
-                            <span class="material-symbols-outlined" style="font-size: 32px;" >cancel</span>
+                            <span class="material-symbols-outlined" style="font-size: 32px;" title="Quit form">cancel</span>
                         </button>
                     <?php endif; ?>
                     <!-- previous and next buttons -->
                     <?php if($idx > 1):?>
                         <button class="btn btn-link p-0" type="submit" form="answer_form" 
                                 formaction="instance/previous/<?=$instance->get_id()?>/<?=$idx?>/<?=$encoded_search?>">
-                            <span class="material-symbols-outlined" style="font-size: 32px;" >skip_previous</span>
+                            <span class="material-symbols-outlined" style="font-size: 32px;" title="Previous question">skip_previous</span>
                         </button>
                     <?php endif; ?>
                     <?php if($idx < count($form->get_questions())):?>
                         <button class="btn btn-link p-0" type="submit" form="answer_form" 
                                 formaction="instance/next/<?=$instance->get_id()?>/<?=$idx?>/<?=$encoded_search?>">
-                            <span class="material-symbols-outlined" style="font-size: 32px;" >skip_next</span>
+                            <span class="material-symbols-outlined" style="font-size: 32px;" title="Next question">skip_next</span>
                         </button>
                     <?php endif;?>
                     <!-- save -->
                     <?php if($idx == count($form->get_questions())): ?>
                         <button class="btn btn-link p-0" type="submit" form="answer_form" 
                                 formaction="instance/save/<?=$instance->get_id()?>/<?=$idx?>/<?=$encoded_search?>">
-                            <span class="material-symbols-outlined" style="font-size: 32px;" >save</span>
+                            <span class="material-symbols-outlined" style="font-size: 32px;" title="Save form">save</span>
                         </button>
                     <?php endif; ?>
                 </div>
