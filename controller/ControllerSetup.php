@@ -39,6 +39,7 @@ class ControllerSetup extends MyController {
                 }
             }
             echo "<a href='{$webroot}'>Retour à l'index</a>";
+            $this->redirect("main");
         } catch (Exception $exc) {
             $this->dev_error("Erreur lors de l'accès à la base de données : " . $exc->getMessage());
         }

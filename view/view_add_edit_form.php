@@ -7,17 +7,17 @@
     <base href="<?= $web_root ?>">
     <link rel="stylesheet" href="css/bootstrap-5.3.3-dist/css/bootstrap.min.css">
     <script src="css/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="//fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0&amp;icon_names=arrow_back,cancel,save,skip_next,skip_previous">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0&amp;icon_names=arrow_back,cancel,save,shoppingmode,skip_next,skip_previous">
 </head>
 <body class="d-flex flex-column align-items-center pt-5 bg-secondary-subtle" data-bs-theme="dark" > 
     <nav class="navbar bg-body-tertiary fixed-top mx-auto" style="max-width: 700px;">
         <div class="container-fluid">
             <a href=<?= $aoe === Aoe::add ?   "forms" : "form/index/".$form->get_id()."/".$encoded_search ?> >
-                <span class="material-symbols-outlined" style="font-size: 32px;" >arrow_back</span>
+                <span class="material-symbols-outlined" style="font-size: 32px;" title="Quit form editing">arrow_back</span>
             </a>
             <form id="addEditForm" action="form/<?= ($aoe === Aoe::add ? "add_form/" : "edit_form/".$form->get_id()."/".$encoded_search ) ?> " method="post">
                 <button class="btn btn-link p-0" id="save" type="submit" >
-                    <span class="material-symbols-outlined" style="font-size: 32px;" >save</span>
+                    <span class="material-symbols-outlined" style="font-size: 32px;" title="Save changes">save</span>
                 </button>
             </form>
         </div>
@@ -57,11 +57,11 @@
             </div>
                        
             <h4>Form color categories :</h4>
-            <div class="d-flex justify-content-between mb-4">
+            <div class="d-flex gap-4 mb-4">
                 <?php foreach (Color::cases() as $color): ?> 
                     <div>
                         <input class="form-check-input" style="color"  <?=in_array($color, $form->get_color()) ? 'checked' : ''?>  type="checkbox" id="<?=$color->value?>" form="addEditForm" name="colors[]" value="<?=$color->value?>">
-                        <label for="<?=$color->value?>"   style="color:<?=$color->get_hex()?>;font-weight:bold;"><?=$color->name?></label>
+                        <label class="material-symbols-outlined" for="<?=$color->value?>"   style="color:<?=$color->get_hex()?>;font-weight:bold;">shoppingmode</label>
                     </div>
                 <?php endforeach; ?>
             </div>

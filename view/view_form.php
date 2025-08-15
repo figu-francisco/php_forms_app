@@ -154,12 +154,12 @@
                                     //fleche UP
                                         "<a href='javascript:up_question(" + question.idx + ")' " +
                                         ((question.idx === 1) ? 'hidden' : '' ) + ">" +
-                                            "<span class='material-symbols-outlined' style='font-size: 32px;'>arrow_upward</span>" +
+                                            "<span class='material-symbols-outlined' style='font-size: 32px;' title='Move up'>arrow_upward</span>" +
                                         "</a>" +
                                     //fleche DOWN
                                         "<a href='javascript:down_question(" + question.idx + ")' " +
                                         ((question.idx === nbr_questions) ? 'hidden' : '' ) + ">" +
-                                            "<span class='material-symbols-outlined' style='font-size: 32px;'>arrow_downward</span>" +
+                                            "<span class='material-symbols-outlined' style='font-size: 32px;' title='Move down'>arrow_downward</span>" +
                                         "</a>"+
                                     "</div>";
                             }
@@ -179,10 +179,10 @@
                         html +=
                             "<div class='d-flex gap-2 ms-auto align-items-center'>" +
                                 "<a href='question/edit_question/" + question.id + "/" + encoded_search + "'>" +
-                                    "<span class='material-symbols-outlined' style='font-size: 32px;'>edit</span>" +
+                                    "<span class='material-symbols-outlined' style='font-size: 32px;' title='Edit question'>edit</span>" +
                                 "</a>" +
                                 "<button  class='btn btn-link p-0' data-bs-toggle='modal' data-bs-target='#del_confirm_modal_" + question.id + "'>" +
-                                    "<span class='material-symbols-outlined' style='font-size: 32px;'>delete</span>" +
+                                    "<span class='material-symbols-outlined' style='font-size: 32px;' title='Delete question'>delete</span>" +
                                 "</button>" +
                             "</div>";
                     }
